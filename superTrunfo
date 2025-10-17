@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+#define MAX_STR 128
+
+
+/* Escolha do atributo para comparação (mude aqui) */
+#define COMPARE_ATTRIBUTE 1
+
+
+typedef struct {
+char estado[MAX_STR];
+char codigo[MAX_STR];
+char nome[MAX_STR];
+long long populacao; // habitantes
+double area; // km^2
+double pib; // valor em unidades monetárias
+int pontos_turisticos; // quantidade
+} Carta;
+
+
+void limpar_buffer() {
+int c;
+while ((c = getchar()) != '\n' && c != EOF) {}
+}
+
+
+void ler_string(const char *prompt, char *dest, size_t size) {
+printf("%s", prompt);
+if (fgets(dest, (int)size, stdin) != NULL) {
+size_t len = strlen(dest);
+if (len > 0 && dest[len-1] == '\n') dest[len-1] = '\0';
+} else {
+dest[0] = '\0';
+}
+}
+
+
+long long ler_longlong(const char *prompt) {
+char linha[64];
+long long v;
+while (1) {
+printf("%s", prompt);
+if (fgets(linha, sizeof(linha), stdin) == NULL) }
+return 0;}
